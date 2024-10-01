@@ -24,7 +24,6 @@ def hl7_json():
     parsed_message = parse_message(message)
 
     # Extract values from HL7 segments
-    race = parsed_message.pid.pid_5.pid_5_2.value
     sex = parsed_message.pid.pid_8.value
     state = parsed_message.pid.pid_11.pid_11_4.value
     zipcode = parsed_message.pid.pid_11.pid_11_5.value
@@ -42,7 +41,6 @@ def hl7_json():
 
     # Creating a dictionary with the extracted data
     patient_data = {
-    "Race": race,
     "Sex": sex,
     "Age": age,
     "State": state,
